@@ -1,0 +1,16 @@
+body {
+    background-color: #FEC868;
+}
+
+.hamster {
+    text-align: center;
+}
+
+.hamster:hover {
+    transform: scaleX(-1);
+}
+
+.hamster-img {
+    background-color: #473C33;
+    border-radius: 100%;
+}
