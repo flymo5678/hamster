@@ -6,11 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamster Site!</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <script>
+        function play() {
+            var audio = new Audio('audio/');
+            audio.play();
+        }
+    </script>
 </head>
 <body>
     <h1 class="title">JOIN THE HAMSTER</h1>
     <div class="hamster">
-        <img src="images/hamster.png" alt="a hamster" class="hamster-img">
+        <img onclick="play()" src="images/hamster.png" alt="a hamster" class="hamster-img" id="hamster">
     </div>
+    <script>
+        setInterval(function () 
+        {
+            document.getElementById("hamster").style.transform = "scalex(-1)";
+            console.log("right")
+        }, 250);
+        setInterval(function () 
+        {
+            document.getElementById("hamster").style.transform = "scalex(1)";
+            console.log("left")
+        }, 500);
+    </script>
 </body>
 </html>
