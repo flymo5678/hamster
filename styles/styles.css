@@ -6,11 +6,8 @@ body {
     text-align: center;
 }
 
-.hamster:hover {
-    transform: scaleX(-1);
-}
-
-.hamster-img {
-    background-color: #473C33;
-    border-radius: 100%;
+.title {
+   text-align: center;
+   font-family: 'Comfortaa', cursive;
+   font-size: 15vh;
 }
