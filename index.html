@@ -10,28 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
     <script>
-        function play() {
-            var audio = new Audio('audio/');
-            audio.play();
-        }
     </script>
 </head>
 <body>
     <h1 class="title">JOIN THE HAMSTER</h1>
     <div class="hamster">
-        <img onclick="play()" src="images/hamster.png" alt="a hamster" class="hamster-img" id="hamster">
+        <img src="images/hamster.png" alt="a hamster" class="hamster-img" id="hamster">
     </div>
     <script>
-        setInterval(function () 
-        {
-            document.getElementById("hamster").style.transform = "scalex(-1)";
-            console.log("right")
-        }, 250);
-        setInterval(function () 
-        {
-            document.getElementById("hamster").style.transform = "scalex(1)";
-            console.log("left")
-        }, 500);
+        document.getElementById("hamster").addEventListener("click", onClick);
+
+        var isPlaying = 0
+        var hamster =  document.getElementById("hamster");
+        var right = setInterval(function() {hamster.style.transform = "scaleX(-1)";}, 250)  
+        var left = setInterval(function() {hamster.style.transform = "scaleX(1)";}, 500)
+
+        function onClick() {
+            if (isPlaying == 1) {
+                console.log("yes");
+                isPlaying = 0;
+                hamster.classList.remove("spin");
+                right = setInterval(function() {hamster.style.transform = "scaleX(-1)";}, 250)  
+                left = setInterval(function() {hamster.style.transform = "scaleX(1)";}, 500)  
+            } else {
+                console.log("no");
+                isPlaying = 1;
+                clearInterval(right)
+                clearInterval(left)
+                hamster.classList.add("spin");
+            }
+        }
     </script>
 </body>
 </html>

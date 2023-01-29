@@ -1,9 +1,22 @@
+@keyframes spin {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
 body {
     background-color: #FEC868;
+    overflow: hidden;
 }
 
 .hamster {
     text-align: center;
+}
+
+.hamster-img.spin {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .title {
