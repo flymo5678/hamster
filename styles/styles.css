@@ -19,6 +19,14 @@ body {
     animation-iteration-count: infinite;
 }
 
+#hamster2 {
+    width: 10%;
+}
+
+#hamster3 {
+    width: 10%;
+}
+
 .title {
    text-align: center;
    font-family: 'Comfortaa', cursive;
